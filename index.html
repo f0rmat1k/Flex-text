@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="flex-text.js"></script>
+    <style>
+        html, body {
+            height: 100%;
+        }
+        .text {
+            width: 300px;
+            height: 20%;
+            background: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="text">
+        Комплект содержит радиопередатчик и сверхрегенеративный приемник. Количество контактов, фактически по 3 штуки, два из которых питание, намекает на крайнюю простоту работы с ними. Правда комплект больше ориентируется на дистанционное управление и чаще используется в паре с кодерами и декодерами на специализированных микросхемах, но мы это упустим, т.к. свой велосипед всегда дороже.
+    </div>
+
+    <script>
+        new FlexText(document.querySelector('.text'));
+    </script>
+</body>
+</html>
