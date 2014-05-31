@@ -1,13 +1,19 @@
 var FlexText = (function(window, document){
     'use strict';
-    var self;
-        function bindEvents(){
-            window.addEventListener('resize', function(){
-                makeFlexText.call(self);
-            }, false);
-        }
+    var self,
+        flexTextBlocks = [];
 
-        bindEvents();
+    function bindEvents(){
+        window.addEventListener('resize', onWindowResize__flextText, false);
+    }
+
+    function onWindowResize__flextText() {
+        flexTextBlocks.forEach(function(block){
+            makeFlexText.call(block);
+        });
+    }
+
+    bindEvents();
 
     function getBlockNode(block){
         var _block;
@@ -82,6 +88,7 @@ var FlexText = (function(window, document){
 
     function FlexText(block){
         self = this;
+        flexTextBlocks.push(this);
         getBlockNode.call(this, block);
         collectParams.call(this);
         makeFlexText.call(this);
