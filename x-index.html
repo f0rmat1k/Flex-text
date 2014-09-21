@@ -2,54 +2,31 @@
 <html>
 <head>
     <title>x-flex-text demo</title>
-    <script src="app/bower_components/platform/platform.js"></script>
-    <link rel="import" href="x-flex-texts.html">
+    <script src="bower_components/platform/platform.js"></script>
+    <link rel="import" href="flex-text.html">
+    <meta charset="utf-8" />
     <style>
 
+        html, body {
+            height: 100%;
+        }
+        flex-text {
+            width: 30%;
+            height: 20%;
+            background: #ccc;
+            font-size: 2em;
+            padding: 20px;
+            margin: 0 0 10px 0;
+        }
     </style>
 </head>
 <body>
+    <flex-text>
+        Комплект содержит радиопередатчик и сверхрегенеративный приемник. Количество контактов, фактически по 3 штуки, два из которых питание, намекает на крайнюю простоту работы с ними. Правда комплект больше ориентируется на дистанционное управление и чаще используется в паре с кодерами и декодерами на специализированных микросхемах, но мы это упустим, т.к. свой велосипед всегда дороже.
+    </flex-text>
 
-<h1>&lt;x-flex-text&gt;</h1>
-<h2>A <a href="http://polymer-project.org">Polymer</a> element for responsive images with <a href="https://github.com/BBC-News/Imager.js/">Imager.js</a></h2>
-
-<p>
-<h4>Source</h4>
-<code>
-    &lt;x-imager widths=&quot;200 260 320 450 600&quot; src=&quot;http://placehold.it/{width}&quot; width=&quot;510&quot;&gt;&lt;/x-imager&gt;
-</code>
-</p>
-
-
-<x-imager widths="400 460 420 1200" src="http://placehold.it/{width}" width="440" class="img-replace"></x-imager>
-
-<p>
-<h4>Source</h4>
-<code>
-    &lt;x-imager widths=&quot;400 460 420 1200&quot; src=&quot;http://placehold.it/{width}&quot; width=&quot;440&quot; class=&quot;img-replace&quot;&gt;&lt;/x-imager&gt;
-</code>
-</p>
-
-
-<x-imager widths="400 460 420 1200" src="http://placehold.it/{width}" width="500" class="img-replace" resize="false" className="imagered"></x-imager>
-
-<p>
-<h4>Source</h4>
-<code>
-    &lt;x-imager widths=&quot;400 460 420 1200&quot; src=&quot;http://placehold.it/{width}&quot; width=&quot;500&quot; class=&quot;img-replace&quot; resize=&quot;false&quot; className=&quot;imagered&quot;&gt;&lt;/x-imager&gt;
-</code>
-</p>
-
-
-<x-imager widths="400 460 420 1200" src="http://placehold.it/{width}" width="400" class="img-replace" resize="false" className="imagered" scrollDelay="100" lazyload="true"></x-imager>
-
-<p>
-<h4>Source</h4>
-<code>
-    &lt;x-imager widths=&quot;400 460 420 1200&quot; src=&quot;http://placehold.it/{width}&quot; width=&quot;400&quot; class=&quot;img-replace&quot; resize=&quot;false&quot; className=&quot;imagered&quot; scrollDelay=&quot;100&quot; lazyload=&quot;true&quot;&gt;&lt;/x-imager&gt;
-</code>
-</p>
-
-
+    <flex-text>
+        Комплект содержит радиопередатчик и сверхрегенеративный приемник. Количество контактов, фактически по 3 штуки, два из которых питание, намекает на крайнюю простоту работы с ними. Правда комплект больше ориентируется на дистанционное управление и чаще используется в паре с кодерами и декодерами на специализированных микросхемах, но мы это упустим, т.к. свой велосипед всегда дороже.
+    </flex-text>
 </body>
 </html>
