@@ -54,7 +54,7 @@ var FlexText = (function(window, document){
         checkContainer.appendChild(node);
 
         document.body.appendChild(checkContainer);
-        var nodeHeight = + window.getComputedStyle(node, null).getPropertyValue('height').replace('px', '');
+        var nodeHeight = + node.style.height.replace('px', '');
 
         if (window.getComputedStyle(text, null).getPropertyValue('height').replace('px', '') > nodeHeight) {
             while(window.getComputedStyle(text, null).getPropertyValue('height').replace('px', '') > nodeHeight){
@@ -71,6 +71,7 @@ var FlexText = (function(window, document){
                 }
             }
         } else if (window.getComputedStyle(text, null).getPropertyValue('height').replace('px', '') < nodeHeight) {
+
             while(window.getComputedStyle(text, null).getPropertyValue('height').replace('px', '') < nodeHeight){
                 if (resultFs < this._options.max) {
                     resultFs += this._options.step;
@@ -81,6 +82,8 @@ var FlexText = (function(window, document){
             }
 
             resultFs -= this._options.step;
+        } else {
+
         }
         resultFs > this._options.max ? resultFs = this._options.max : null;
         this._currentFs = resultFs;
@@ -92,11 +95,19 @@ var FlexText = (function(window, document){
         this._baseFs = parseInt(window.getComputedStyle(this._block, null).getPropertyValue('font-size'), 10);
     }
 
+    function enableLiveUpdate(){
+        var interval = typeof this._options.live === 'number' ? this._options.live : 50;
+        setInterval(function(){
+            makeFlexText.call(this);
+        }.bind(this), interval);
+    }
+
     function FlexText(block, options){
         var resultOptions = {
             min: 5,
             max: 999,
             step: 0.1,
+            live: false,
             onOverflow: function(){}
         };
 
@@ -110,6 +121,10 @@ var FlexText = (function(window, document){
         getBlockNode.call(this, block);
         collectParams.call(this);
         makeFlexText.call(this);
+
+        if (this._options.live) {
+            enableLiveUpdate.call(this);
+        }
     }
 
     return FlexText;
