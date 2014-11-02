@@ -1,6 +1,4 @@
-# flex-text
-=========
-
+# Flex-text
 flex-text plugin make your font-size flexible with block size.
 
 ## Usage
