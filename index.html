@@ -10,26 +10,40 @@
             height: 100%;
         }
 
+        .demoBlock
+        {
+            border: 1px solid #000;
+            margin: 0 0 50px 0;
+            vertical-align: top;
+            padding: 0 0 20px 0;
+            overflow: hidden;
+        }
+
+        .demoBlock__desc
+        {
+            border-bottom: 1px solid #000;
+
+        }
+
         .text {
-            background: #ccc;
-            float: left;
-            margin: 0 20px 20px 0;
+            background: #a4c8d0;
         }
 
         .text1
         {
-            width: 25%;
-            height: 40%;
-            font-size: 22px;
-            padding: 20px 30px;
+            font-size: 20px;
+            height: 130px;
         }
 
         .text2
         {
-            width: 25%;
-            height: 40%;
-            /*font-size: 10px;*/
-            padding: 20px 30px;
+            font-size: 20px;
+            height: 130px;
+        }
+
+        .text3
+        {
+            height: 130px;
         }
 
         @keyframes loopHeight {
@@ -38,7 +52,7 @@
             100% { height: 30% }
         }
 
-        .text3
+        .text4
         {
             width: 25%;
             height: 40%;
@@ -46,43 +60,102 @@
             padding: 20px 30px;
             animation: loopHeight 2s infinite;
         }
+
+        button {
+            margin: 20px 0;
+            font-size: 20px;
+        }
     </style>
 </head>
 <body>
-    <div class="text text1">
-        Комплект содержит радиопередатчик и сверхрегенеративный приемник. Количество контактов, фактически по 3 штуки, два из которых питание, намекает на крайнюю простоту работы с ними. Правда комплект больше ориентируется на дистанционное управление и чаще используется в паре с кодерами и декодерами на специализированных микросхемах, но мы это упустим, т.к. свой велосипед всегда дороже.
+    <div class="demoBlock">
+        <div class="demoBlock__desc">
+            Simple, without window resize update. The text seeks to fill all block.<br />
+
+            <code>
+                new FlexText(document.querySelector('.text1'));
+            </code>
+            <br />
+            <button onclick="javascript: flex1.update();">Do flex</button>
+        </div>
+        <div class="text text1">
+            Пакеты (packages) — основной способ добавления нового функционала в Laravel, так говорит нам официальная документация. Мы создадим пакет специально для Laravel, это будет простой блог со списком записей и страницей для просмотра статьи. Мы не ставим целью написать превосходный, универсальный блог с кучей возможностей для кастомизации, мы лишь рассмотрим все тонкости создания пакета, как независимого расширения.
+        </div>
+        <script>
+            var flex1 = new FlexText(document.querySelector('.text1'));
+        </script>
     </div>
 
-    <div class="text text2">
-        Количество контактов, фактически по 3 штуки, два из которых питание, намекает на крайнюю простоту работы с ними. Правда комплект больше ориентируется на дистанционное управление и чаще используется в паре с кодерами и декодерами на специализированных микросхемах, но мы это упустим, т.к. свой велосипед всегда дороже.
+    <div class="demoBlock">
+        <div class="demoBlock__desc">
+            Same, but updated with resize<br />
+
+<pre>
+    new FlexText(document.querySelector('.text2'), {
+        resize: true
+    });
+</pre>
+        </div>
+        <div class="text text2">
+            Пакеты (packages) — основной способ добавления нового функционала в Laravel, так говорит нам официальная документация. Мы создадим пакет специально для Laravel, это будет простой блог со списком записей и страницей для просмотра статьи. Мы не ставим целью написать превосходный, универсальный блог с кучей возможностей для кастомизации.
+        </div>
+        <script>
+            new FlexText(document.querySelector('.text2'), {
+                resize: true
+            });
+        </script>
     </div>
 
-    <div class="text text3">
-        Комплект содержит радиопередатчик и сверхрегенеративный приемник. Количество контактов, фактически по 3 штуки, два из которых питание, намекает на крайнюю простоту работы с ними. Правда комплект больше ориентируется на дистанционное управление и чаще используется в паре с кодерами и декодерами на специализированных микросхемах, но мы это упустим, т.к. свой велосипед всегда дороже.
-        Комплект содержит радиопередатчик и сверхрегенеративный приемник. Количество контактов, фактически по 3 штуки, два из которых питание, намекает на крайнюю простоту работы с ними. Правда комплект больше ориентируется на дистанционное управление и чаще используется в паре с кодерами и декодерами на специализированных микросхемах, но мы это упустим, т.к. свой велосипед всегда дороже.
+    <div class="demoBlock">
+        <div class="demoBlock__desc">
+            If u don't want to do flexed text but want to know about overflow-situation on your site, u can use only callback:
+<pre>
+    new FlexText(document.querySelector('.text1'), {
+        onOverflow: function(data){
+            console.log(data);
+            //and same like this
+            $.ajax(...)
+        }
+    });
+</pre>
+        </div>
+        <div class="text text3">
+            Пакеты (packages) — основной способ добавления нового функционала в Laravel, так говорит нам официальная документация. Мы создадим пакет специально для Laravel, это будет простой блог со списком записей и страницей для просмотра статьи. Мы не ставим целью написать превосходный, универсальный блог с кучей возможностей для кастомизации.
+            Пакеты (packages) — основной способ добавления нового функционала в Laravel, так говорит нам официальная документация. Мы создадим пакет специально для Laravel, это будет простой блог со списком записей и страницей для просмотра статьи. Мы не ставим целью написать превосходный, универсальный блог с кучей возможностей для кастомизации.
+            Пакеты (packages) — основной способ добавления нового функционала в Laravel, так говорит нам официальная документация. Мы создадим пакет специально для Laravel, это будет простой блог со списком записей и страницей для просмотра статьи. Мы не ставим целью написать превосходный, универсальный блог с кучей возможностей для кастомизации.
+        </div>
+        <script>
+            new FlexText(document.querySelector('.text3'), {
+                onOverflow: function(data){
+                    console.log(data);
+                }
+            });
+        </script>
     </div>
 
     <script>
-        var blocks = document.querySelectorAll('.text');
 
-        for (var i = 0; i < blocks.length; i++) {
-            new FlexText(blocks[i], {
-                min: 12,
-                max: 15,
-                onOverflow: function(data){
-
-                }
-            });
-        }
-
-        new FlexText('.text3', {
-            min: 10,
-            max: 20,
-            live: 4,
-            onOverflow: function(data){
-
-            }
-        });
+//        var blocks = document.querySelectorAll('.text1, .text2');
+//
+//        for (var i = 0; i < blocks.length; i++) {
+//            new FlexText(blocks[i], {
+////                resize: true,
+//                min: 12,
+//                max: 15,
+//                onOverflow: function(data){
+//                    console.log(data);
+//                }
+//            });
+//        }
+//
+//        new FlexText('.text3', {
+//            min: 10,
+//            max: 20,
+////            live: 200,
+//            onOverflow: function(data){
+//
+//            }
+//        });
     </script>
 </body>
 </html>
