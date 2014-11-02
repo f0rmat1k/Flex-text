@@ -1,5 +1,5 @@
 # Flex-text
-flex-text plugin make your font-size flexible with block size.
+flex-text plugin makes your font-size flexible with block size.
 
 ## Usage
 ```javasscript
