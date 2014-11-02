@@ -13,6 +13,7 @@ new FlexText(document.querySelector('.your-text-block', {
 ## Documentation
 ### Options
 `resize`: [bool, default false] – Update font-size with window resize event;
+
 `min`: [float, default: 5] – the minimal font-size, which plugin can use;
 `max`: [float, default: 999] – the maximal font-size, which plugin can use;
 `live`: [int/bool, default: false] - live update with interval. So you can specify interval `live: 100`;
