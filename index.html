@@ -12,17 +12,17 @@
 
         .demoBlock
         {
-            border: 1px solid #000;
+            border: 1px solid #ccc;
             margin: 0 0 50px 0;
             vertical-align: top;
             padding: 0 0 20px 0;
             overflow: hidden;
+            border-radius: 3px;
         }
 
         .demoBlock__desc
         {
-            border-bottom: 1px solid #000;
-
+            border-bottom: 1px solid #ccc;
         }
 
         .text {
@@ -46,19 +46,19 @@
             height: 130px;
         }
 
-        @keyframes loopHeight {
-            0%   { height: 30% }
-            50%   { height: 80% }
-            100% { height: 30% }
+        @keyframes loopWidth {
+            50%   { width: 50% }
+            100% { width: 25% }
         }
 
         .text4
         {
             width: 25%;
-            height: 40%;
+            /*width: 60%;*/
             /*font-size: 10px;*/
-            padding: 20px 30px;
-            animation: loopHeight 2s infinite;
+            /*padding: 20px 30px;*/
+            animation: loopWidth 3s;
+            height: 130px;
         }
 
         button {
@@ -110,7 +110,7 @@
         <div class="demoBlock__desc">
             If u don't want to do flexed text but want to know about overflow-situation on your site, u can use only callback:
 <pre>
-    new FlexText(document.querySelector('.text1'), {
+    new FlexText(document.querySelector('.text3'), {
         onOverflow: function(data){
             console.log(data);
             //and same like this
@@ -132,6 +132,28 @@
             });
         </script>
     </div>
+
+    <div class="demoBlock">
+        <div class="demoBlock__desc">
+            If you use animations and u can set live option with needed update interval:
+<pre>
+    new FlexText(document.querySelector('.text4'), {
+        live: 300
+    });
+</pre>
+        </div>
+        <div class="text text4">
+            For example, if you are designing a brand new website for someone, most times you will have to make sure the prototype looks finished by inserting text or photos or what have you. The purpose of this is so the person viewing the prototype has a chance to actually feel and understand the idea behind what you have created.
+            Now in some circumstances, designers may use squares and rectangles to help you visualize what should and could be in a specific location.
+        </div>
+        <script>
+            new FlexText(document.querySelector('.text4'), {
+                live: 300
+//                resize: true
+            });
+        </script>
+    </div>
+
 
     <script>
 

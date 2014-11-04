@@ -73,6 +73,7 @@ var FlexText = (function(window, document){
         var nodeHeight = + node.style.height.replace('px', ''),
             textHeight = window.getComputedStyle(text, null).getPropertyValue('height').replace('px', '');
 
+        console.log(textHeight);
         if (textHeight > nodeHeight) {
             if (Object.keys(this._options.origin).length === 1 && this._options.origin.onOverflow) {
                 onOverflow.call(this, {
@@ -90,7 +91,7 @@ var FlexText = (function(window, document){
                     break;
                 }
             }
-        } else if (window.getComputedStyle(text, null).getPropertyValue('height').replace('px', '') < nodeHeight) {
+        } else if (textHeight < nodeHeight) {
             while(window.getComputedStyle(text, null).getPropertyValue('height').replace('px', '') < nodeHeight){
                 if (resultFs < this._options.max) {
                     resultFs += this._options.step;
