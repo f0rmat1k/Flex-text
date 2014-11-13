@@ -1,0 +1,16 @@
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+
+.idea
+.DS_Store
+atlassian-ide-plugin.xml
+index.html
+npm-debug.log
+
+node_modules
