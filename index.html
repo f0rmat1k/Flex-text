@@ -7,8 +7,69 @@
     <meta name="description" content="Flex-text : responsive text">
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+      <script src="https://raw.githubusercontent.com/f0rmat1k/flex-text/master/flex-text.js"></script>
 
     <title>Flex-text</title>
+
+      <style>
+          html, body {
+              height: 100%;
+          }
+
+          .demoBlock
+          {
+              margin: 0 0 50px 0;
+              vertical-align: top;
+              padding: 0 0 20px 0;
+              overflow: hidden;
+          }
+
+          .demoBlock__desc
+          {
+              border-bottom: 1px solid #ccc;
+          }
+
+          .text {
+              background: #a4c8d0;
+          }
+
+          .text1
+          {
+              font-size: 20px;
+              height: 130px;
+          }
+
+          .text2
+          {
+              font-size: 20px;
+              height: 130px;
+          }
+
+          .text3
+          {
+              height: 130px;
+          }
+
+          @keyframes loopWidth {
+              50%   { width: 50% }
+              100% { width: 25% }
+          }
+
+          .text4
+          {
+              width: 25%;
+              /*width: 60%;*/
+              /*font-size: 10px;*/
+              /*padding: 20px 30px;*/
+              animation: loopWidth 3s;
+              height: 130px;
+          }
+
+          button {
+              margin: 20px 0;
+              font-size: 20px;
+          }
+      </style>
   </head>
 
   <body>
@@ -61,6 +122,98 @@
 
 <p><code>onOverflow</code>: function calling in situation, when text does not fit in the block. Important: if it is only options, plugin will not work, only execute callback.
 It's useful, when you don't want to change text, but want to know about overflow (e.g., you can send ajax request about this situation);</p>
+
+<h3>
+  <a name="options" class="anchor" href="#methods"><span class="octicon octicon-link"></span></a>Methods</h3>
+
+          <p><code>update</code>: updating text font-size</p>
+
+          <h2>
+              <a name="documentation" class="anchor" href="#examples"><span class="octicon octicon-link"></span></a>Examples</h2>
+
+<div class="demoBlock">
+  <div class="demoBlock__desc">
+      Simple, without window resize update. The text seeks to fill all block.<br />
+
+      <code>
+          new FlexText(document.querySelector('.text1'));
+      </code>
+      <br />
+      <button onclick="javascript: flex1.update();">Do flex</button>
+  </div>
+  <div class="text text1">
+      Пакеты (packages) — основной способ добавления нового функционала в Laravel, так говорит нам официальная документация. Мы создадим пакет специально для Laravel, это будет простой блог со списком записей и страницей для просмотра статьи. Мы не ставим целью написать превосходный, универсальный блог с кучей возможностей для кастомизации, мы лишь рассмотрим все тонкости создания пакета, как независимого расширения.
+  </div>
+  <script>
+      var flex1 = new FlexText(document.querySelector('.text1'));
+  </script>
+</div>
+
+<div class="demoBlock">
+  <div class="demoBlock__desc">
+      Same, but updated with resize
+<pre>
+    new FlexText(document.querySelector('.text2'), {
+        resize: true
+    });
+</pre>
+    </div>
+              <div class="text text2">
+                  Пакеты (packages) — основной способ добавления нового функционала в Laravel, так говорит нам официальная документация. Мы создадим пакет специально для Laravel, это будет простой блог со списком записей и страницей для просмотра статьи. Мы не ставим целью написать превосходный, универсальный блог с кучей возможностей для кастомизации.
+              </div>
+              <script>
+                  new FlexText(document.querySelector('.text2'), {
+                      resize: true
+                  });
+              </script>
+          </div>
+
+          <div class="demoBlock">
+              <div class="demoBlock__desc">
+                  If u don't want to do flexed text but want to know about overflow-situation on your site, u can use only callback:
+<pre>
+    new FlexText(document.querySelector('.text3'), {
+        onOverflow: function(data){
+            console.log(data);
+            //and same like this
+            $.ajax(...)
+        }
+    });
+</pre>
+              </div>
+              <div class="text text3">
+                  Пакеты (packages) — основной способ добавления нового функционала в Laravel, так говорит нам официальная документация. Мы создадим пакет специально для Laravel, это будет простой блог со списком записей и страницей для просмотра статьи. Мы не ставим целью написать превосходный, универсальный блог с кучей возможностей для кастомизации.
+                  Пакеты (packages) — основной способ добавления нового функционала в Laravel, так говорит нам официальная документация. Мы создадим пакет специально для Laravel, это будет простой блог со списком записей и страницей для просмотра статьи. Мы не ставим целью написать превосходный, универсальный блог с кучей возможностей для кастомизации.
+                  Пакеты (packages) — основной способ добавления нового функционала в Laravel, так говорит нам официальная документация. Мы создадим пакет специально для Laravel, это будет простой блог со списком записей и страницей для просмотра статьи. Мы не ставим целью написать превосходный, универсальный блог с кучей возможностей для кастомизации.
+              </div>
+              <script>
+                  new FlexText(document.querySelector('.text3'), {
+                      onOverflow: function(data){
+                          console.log(data);
+                      }
+                  });
+              </script>
+          </div>
+
+          <div class="demoBlock">
+              <div class="demoBlock__desc">
+                  If you use animations and u can set live option with needed update interval:
+<pre>
+    new FlexText(document.querySelector('.text4'), {
+        live: 300
+    });
+</pre>
+              </div>
+              <div class="text text4">
+                  For example, if you are designing a brand new website for someone, most times you will have to make sure the prototype looks finished by inserting text or photos or what have you. The purpose of this is so the person viewing the prototype has a chance to actually feel and understand the idea behind what you have created.
+                  Now in some circumstances, designers may use squares and rectangles to help you visualize what should and could be in a specific location.
+              </div>
+              <script>
+                  new FlexText(document.querySelector('.text4'), {
+                      live: 300
+                  });
+              </script>
+          </div>
 
 <!--<p>//<a href="https://kontur.ru/ideas">https://kontur.ru/ideas</a>-->
 <!--//<a href="https://yadi.sk/i/Xp3cPxrYbmawt">https://yadi.sk/i/Xp3cPxrYbmawt</a></p>-->
