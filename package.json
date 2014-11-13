@@ -1,0 +1,22 @@
+{
+  "name": "flex-text",
+  "version": "1.0.0",
+  "description": "flex-text plugin makes your font-size flexible with block size.",
+  "main": "flex-text.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/f0rmat1k/flex-text.git"
+  },
+  "author": "f0rmat1k",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/f0rmat1k/flex-text/issues"
+  },
+  "homepage": "https://github.com/f0rmat1k/flex-text",
+  "dependencies": {
+    "gulp": "^3.8.10"
+  }
+}

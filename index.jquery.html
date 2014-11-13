@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script src="jquery-1.11.1.min.js"></script>
+    <script src="jquery.flextext.js"></script>
+
+    <script>
+        $(function(){
+            $('.text').flexText({
+                min: 13
+            });
+        });
+    </script>
+
+    <style>
+        .text
+        {
+            width: 200px;
+            height: 100px;
+            background: lightskyblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="text">
+        Compressed and uncompressed copies of jQuery files are available. The uncompressed file is best used during development or debugging; the compressed file saves bandwidth and improves performance in production.
+    </div>
+</body>
+</html>
