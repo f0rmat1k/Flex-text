@@ -1,5 +1,5 @@
 ;(function($){
-//flex-text
+    /* flex-text */
     var methods = {
         init: function(params) {
             if (this.data('flex-text')) return;
@@ -31,4 +31,3 @@
         }
     };
 })(jQuery);
-
