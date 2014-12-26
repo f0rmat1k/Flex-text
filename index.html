@@ -20,17 +20,21 @@
           {
               margin: 0 0 50px 0;
               vertical-align: top;
-              padding: 0 0 20px 0;
+              box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
               overflow: hidden;
+              border: 1px solid rgba(0, 0, 0, 0.1);
+              border-radius: 3px;
           }
 
           .demoBlock__desc
           {
               border-bottom: 1px solid #ccc;
+              padding: 5px 10px;
           }
 
           .text {
-              background: #a4c8d0;
+              background: #d2ecf1;
+              padding: 10px;
           }
 
           .text1
@@ -47,7 +51,7 @@
 
           .text3
           {
-              height: 130px;
+              height: 129px;
           }
 
           @keyframes loopWidth {
@@ -68,6 +72,11 @@
           button {
               margin: 20px 0;
               font-size: 20px;
+          }
+          pre
+          {
+              width: auto;
+              margin: 0 0 5px;
           }
       </style>
   </head>
@@ -136,17 +145,15 @@ It's useful, when you don't want to change text, but want to know about overflow
       Simple, without window resize update. The text seeks to fill all block.<br />
 
       <code>
-          new FlexText(document.querySelector('.text1'));
+          onclick: new FlexText(document.querySelector('.text1'));
       </code>
       <br />
-      <button onclick="javascript: flex1.update();">Do flex</button>
+      <button onclick="javascript: new FlexText(document.querySelector('.text1'));">Do flex</button>
   </div>
   <div class="text text1">
       Пакеты (packages) — основной способ добавления нового функционала в Laravel, так говорит нам официальная документация. Мы создадим пакет специально для Laravel, это будет простой блог со списком записей и страницей для просмотра статьи. Мы не ставим целью написать превосходный, универсальный блог с кучей возможностей для кастомизации, мы лишь рассмотрим все тонкости создания пакета, как независимого расширения.
+      Универсальный блог с кучей возможностей для кастомизации, мы лишь рассмотрим все тонкости создания пакета, как независимого расширения.
   </div>
-  <script>
-      var flex1 = new FlexText(document.querySelector('.text1'));
-  </script>
 </div>
 
 <div class="demoBlock">
